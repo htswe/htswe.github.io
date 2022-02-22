@@ -13,17 +13,17 @@ One of the **Object Oriented Programming** concept is the ability of _polymorphi
 
 Let's consider an object `Pet`. The `Pet` class says that all pets can `speak()`. `Dog` and `Cat` override the `speak()` member function.
 
-```
+```kotlin
 open class Pet {
-	open fun speak() = "Pet"
+  open fun speak() = "Pet"
 }
 
 class Dog : Pet() {
-	override fun speak() = "Woff"
+  override fun speak() = "Woff"
 }
 
 class Cat : Pet() {
-	override fun speak() = "Meow"
+  override fun speak() = "Meow"
 }
 
 fun talk(pet: Pet) = pet.speak()

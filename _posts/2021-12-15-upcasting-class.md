@@ -25,7 +25,7 @@ Kotlin frees us from these constraints. We have stand-alone functions so everyth
 
 Let's imagine this. We have 3 objects (`Circle`, `Square` and `Triangle`) that inherit the `Shape`. And we have a function -
 
-```
+```kotlin
 fun show(shape: Shape) = print(shape.toString)
 ```
 

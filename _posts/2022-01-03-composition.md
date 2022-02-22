@@ -23,21 +23,21 @@ You can also choose a simpler approach, by creating objects of existing classes 
 
 Composition is a _has-a_ relationship. "A house is a building and has a room" can be expressed:
 
-```
+```kotlin
 interface Building
 interface Room
 
 interface House : Building {
-	val room: Room
+    val room: Room
 }
 ```
 
 If your house has two rooms, the composition makes it easy to change:
 
-```
+```kotlin
 interface House: Building {
-	val room_one: Room
-	val room_two: Room
+    val room_one: Room
+    val room_two: Room
 }
 ```
 
@@ -47,15 +47,15 @@ Both composition and inheritance put object inside the new class. **Composition*
 
 **Composition** provides the functionality of an existing class, but not its interface. Usually you embed an object to use its features. To hide the object completely, you can make the object `private`.
 
-```
+```kotlin
 class Existing {
-	fun f1() = "feature1"
-	fun f2() = "feature2"
+    fun f1() = "feature1"
+    fun f2() = "feature2"
 }
 
 class CompositionClass {
-	private val existing = Existing()
-	fun operation() = existing.f1() + existing.f2()
+    private val existing = Existing()
+    fun operation() = existing.f1() + existing.f2()
 }
 ```
 

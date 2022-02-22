@@ -15,22 +15,22 @@ But is this always a good choice?
 
 Class delegation is midway between composition and inheritance. Like composition, we have to place the member inside our class. Like inheritance, it exposes the interface of the sub object.
 
-```
+```kotlin
 open class Heater {
-	fun heat(temp: Int) = "Heating to $temp"
+    fun heat(temp: Int) = "Heating to $temp"
 }
 
 class Aircon: Heater() {
-	fun cool(temp: Int) = "Cooling to $temp"
+    fun cool(temp: Int) = "Cooling to $temp"
 }
 
 fun warmingUp(heater: Heater) {
-	heater.heat(70)
+    heater.heat(70)
 }
 
 fun upAndDown(aircon: Aircon) {
-	aircon.heat(70)
-	aircon.cool(20)
+    aircon.heat(70)
+    aircon.cool(20)
 }
 
 val heater = Heater()
@@ -50,12 +50,12 @@ The code above is seen logical. Since `Heater` cannot do all the functions we wa
 
 What we really wanted in previous example is a `Heater` class with `cool()` function, so that `upAndDown` function works. Why not extension function? It does the same thing without inheritance.
 
-```
+```kotlin
 fun Heater.cool(temp: Int) = "Cooling to $temp"
 
 fun upAndDown(heater: Heater) {
-	aircon.heat(70)
-	aircon.cool(20)
+    aircon.heat(70)
+    aircon.cool(20)
 }
 ```
 
@@ -63,7 +63,7 @@ fun upAndDown(heater: Heater) {
 
 An extension function can be considered as creating an interface containing a single function.
 
-```
+```kotlin
 class X
 fun X.f() {}
 
@@ -80,18 +80,18 @@ Although both `X` and `Y` has a member function `f()`, but we don’t get polymo
 
 There are cases where you are forced to use member functions rather than extensions. If a function must access a `private` member, you have no choice but to make it a member function:
 
-```
+```kotlin
 class Z(var i: Int = 0) {
-	private var j = 0
-	fun inc() {
-		i++
-		j++
-	}
+    private var j = 0
+    fun inc() {
+        i++
+        j++
+    }
 }
 
 fun Z.dec() {
-	i--
-	//j--
+    i--
+    //j--
 }
 ```
 

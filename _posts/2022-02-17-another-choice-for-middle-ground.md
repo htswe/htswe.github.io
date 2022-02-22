@@ -15,19 +15,19 @@ Class delegation is midway between composition and inheritance. Like composition
 
 Let’s see this:
 
-```
+```kotlin
 interface Control {
-	fun up(speed: Int): String
-	fun down(speed: Int): String
-	fun left(speed: Int): String
-	fun right(speed: Int): String
+    fun up(speed: Int): String
+    fun down(speed: Int): String
+    fun left(speed: Int): String
+    fun right(speed: Int): String
 }
 
 class DroneController: Control {
-	override fun up(speed: Int) = "up $speed"
-	override fun down(speed: Int) = "down $speed"
-	override fun left(speed: Int) = "left $speed"
-	override fun right(speed: Int) = "right $speed"
+    override fun up(speed: Int) = "up $speed"
+    override fun down(speed: Int) = "down $speed"
+    override fun left(speed: Int) = "left $speed"
+    override fun right(speed: Int) = "right $speed"
 }
 ```
 
@@ -35,17 +35,17 @@ What if we want a super drone controller that can speed 2 times while going up a
 
 We can create an instance of `DroneController` as a property and explicitly delegate all the exposed member functions to that instance.
 
-```
+```kotlin
 class SuperDroneController: Control {
-	private val controller = DroneController()
+    private val controller = DroneController()
 
-	// delegate
-	override fun up(speed: Int)
-		= controller.up(speed) + "2x"
-	override fun down(speed: Int)
-		= controller.down(speed) + "2x"
-	override fun left(speed: Int) = controller.left(speed)
-	override fun right(speed: Int) = controller.right(speed)
+    // delegate
+    override fun up(speed: Int)
+        = controller.up(speed) + "2x"
+    override fun down(speed: Int)
+        = controller.down(speed) + "2x"
+    override fun left(speed: Int) = controller.left(speed)
+    override fun right(speed: Int) = controller.right(speed)
 }
 ```
 
@@ -55,14 +55,14 @@ It is called [Delegation Design Pattern](https://en.wikipedia.org/wiki/Delegatio
 
 For the `SuperDroneController` example, in Kotlin language, we can remove the boilerplate code with the keyword `by`.
 
-```
+```kotlin
 class SuperDroneController(dController: DroneController) :
-	Control by dController {
+    Control by dController {
 
-	override fun up(speed: Int)
-		= dController.up(speed) + "2x"
-	override fun down(speed: Int)
-		= dController.down(speed) + "2x"
+    override fun up(speed: Int)
+        = dController.up(speed) + "2x"
+    override fun down(speed: Int)
+        = dController.down(speed) + "2x"
 }
 ```
 
@@ -70,44 +70,44 @@ class SuperDroneController(dController: DroneController) :
 
 Kotlin doesn’t support multiple class inheritance, but you can simulate it using class delegation. For example, you want to produce a button by combining a class that draws a rectangle and another class that manages mouse events.
 
-```
+```kotlin
 // a class drawing rectangle
 
 interface Rectangle {
-	fun draw(): String
+    fun draw(): String
 }
 
 class ButtonImage (val w: Int, val h: Int) : Rectangle {
-	override fun draw() =
-		"drawing with $w and $h"
+    override fun draw() =
+        "drawing with $w and $h"
 }
 ```
 
 Next is the mouse event manager.
 
-```
+```kotlin
 interface MouseManager {
-	fun click(): Boolean
+    fun click(): Boolean
 }
 
 class UserInput : MouseManager {
-	override fun click() = true
+    override fun click() = true
 }
 ```
 
 Finally, here is our `Button`.
 
-```
+```kotlin
 class Button(image: Rectangle, input: MouseManager) :
-	Rectangle by image, MouseManager by input
+    Rectangle by image, MouseManager by input
 
 fun main() {
-	val buttonImage = ButtonImage(10, 5)
-	val userInput = UserInput()
+    val buttonImage = ButtonImage(10, 5)
+    val userInput = UserInput()
 
-	button = Button(buttonImage, userInput)
-	button.draw()
-	button.click()
+    button = Button(buttonImage, userInput)
+    button.draw()
+    button.click()
 }
 ```
 
