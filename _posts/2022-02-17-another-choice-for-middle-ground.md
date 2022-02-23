@@ -1,5 +1,7 @@
 ---
 title: "Another choice for middle ground (Composition Vs Inheritance)"
+header:
+  image: https://images.unsplash.com/photo-1503135279369-a01d94b5c9e4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80
 categories:
   - Tech
 tags:
@@ -8,8 +10,6 @@ tags:
 ---
 
 Both composition and inheritance place sub objects inside the new class. With composition, the sub object is explicit whereas the sub object with inheritance is implicit.
-
-![image-center](https://images.unsplash.com/photo-1503135279369-a01d94b5c9e4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80){: .align-center}
 
 Class delegation is midway between composition and inheritance. Like composition, we have to place the member inside our class. Like inheritance, it exposes the interface of the sub object.
 

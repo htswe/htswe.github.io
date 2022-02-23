@@ -1,5 +1,7 @@
 ---
 title: "Another look in Inheritance"
+header:
+  image: https://images.pexels.com/photos/761297/pexels-photo-761297.jpeg
 categories:
   - Tech
 tags:
@@ -10,8 +12,6 @@ tags:
 We touched a bit on Inheritance concept. Inheritance is sometimes used to add functions to a class as a way of reuse for a new purpose.
 
 But is this always a good choice?
-
-![image-center](https://images.pexels.com/photos/761297/pexels-photo-761297.jpeg){: .align-center}
 
 Class delegation is midway between composition and inheritance. Like composition, we have to place the member inside our class. Like inheritance, it exposes the interface of the sub object.
 

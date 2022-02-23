@@ -1,5 +1,7 @@
 ---
 title: "Upcasting class"
+header:
+  image: https://images.pexels.com/photos/1128317/pexels-photo-1128317.jpeg
 categories:
   - Tech
 tags:
@@ -14,8 +16,6 @@ What is upcasting?
 The term _upcast_ refers to the way inheritance hierarchies are traditionally represented with the base class at the top and derived classes fanning out below.
 
 Inheritance and adding new member functions is the practice in [Smalltalk](https://en.wikipedia.org/w/index.php?title=Smalltalk&action=view&section=3#Object-oriented_programming), one of the first successful object-oriented languages in Smalltalk, everything is an object and the only way to create a class is to inherit from an existing class, often adding new member functions. Smalltalk heavily influenced Java, which also requires everything to be an object.
-
-![family](https://images.pexels.com/photos/1128317/pexels-photo-1128317.jpeg){: .align-center}
 
 ### Kotlin's way
 

@@ -1,5 +1,7 @@
 ---
 title: "Composition"
+header:
+  image: https://images.pexels.com/photos/4466460/pexels-photo-4466460.jpeg
 categories:
   - Tech
 tags:
@@ -12,8 +14,6 @@ One of most compelling arguments for object oriented programming is **_code reus
 When i was a noob, when I heard the word "reuse", I thought it was "copying code". Copying seems an easy solution, but in reality, it doesn't work very well. As time passes, the requirements change. Applying the changes to all the duplicate codes become a maintenance nightmare. The question of "Did you find all the copies?" is always haunting me? And then you wish the reused code can be changed in just one place.
 
 In object-oriented programming, we will reuse code by creating new classes, but instead of creating them from scratch, we use existing classes that someone has already built and debugged. The trick is to use the classes without dirtying the existing code.
-
-![composing different flowers](https://images.pexels.com/photos/4466460/pexels-photo-4466460.jpeg){: .align-center}
 
 Inheritance is one way to achieve this. Inheritance creates a new class as a _type of_ an existing class. You add code to the form of the existing class without modifying the original. Inheritance is a _cornerstone of object-oriented programming_.
 

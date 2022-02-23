@@ -1,5 +1,7 @@
 ---
 title: "Polymorphism"
+header:
+  image: https://images.pexels.com/photos/951531/pexels-photo-951531.jpeg
 categories:
   - Tech
 tags:
@@ -8,8 +10,6 @@ tags:
 ---
 
 One of the **Object Oriented Programming** concept is the ability of _polymorphism_. The word, _polymorphism_ is an ancient Greek term. It means **_many forms_**. In programming context, _polymorphism_ means an object or its members have multiple implementations.
-
-![Ancient Greek](https://images.pexels.com/photos/951531/pexels-photo-951531.jpeg){: .align-center}
 
 Let's consider an object `Pet`. The `Pet` class says that all pets can `speak()`. `Dog` and `Cat` override the `speak()` member function.
 
