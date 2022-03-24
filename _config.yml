@@ -19,12 +19,12 @@ description: >- # this means to ignore newlines until "baseurl:"
   Father of two, educator, life-long learner, pragmatic programmer, footballer
 #twitter_username: username
 github_username: 4tee
-minimal_mistakes_skin: default
+minimal_mistakes_skin: dark
 search: true
 
 # Build settings
 markdown: kramdown
-remote_theme: mmistakes/minimal-mistakes
+remote_theme: mmistakes/minimal-mistakes@4.24.0
 # Outputting
 permalink: /:categories/:title/
 paginate: 8 # amount of posts to show
