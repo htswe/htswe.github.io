@@ -10,11 +10,11 @@ tags:
 
 ### About this book
 
-This book is written by ex US army general and the story is mainly how US adapt to the new war between the AQI and US intelligence units. It gives a good insight about the struggle and how it overcame to respond to the threats. It also outlined the history of wars, industry revolution and how the information and communicatation become so critical in information age.
+This book is written by ex US army general and the story is mainly how US adapt to the new war between the AQI and US intelligence units. It gives a good insight about the struggle and how it overcame to respond to the threats. It also outlined the history of wars, industry revolution and how the information and communication become so critical in information age.
 
 ### Who should read
 
-Initially, I was worried that a book about war. I personally prefer reading interesting stories, and this book turned out to be one of the good books to read. Not everyone of us are working in military or able to relate to war. But some of us work in big or small governemnt or private corporations. 
+Initially, I was worried that a book about war. I personally prefer reading interesting stories, and this book turned out to be one of the good books to read. Not everyone of us are working in military or able to relate to war. But some of us work in big or small government or private corporations.
 
 This book gives a good overview of what it feel to be working in a big organization with thousands of people with different cultures and backgrounds. If you are a person who is struggling with cross team communication, this book could be a good book to learn.
 
@@ -39,6 +39,7 @@ There is no particular orders, but I took some notes along the way so that I cou
 > _Managing chaos (pg 31)_
 
 ---
+
 #### 2. Is it a science problem?
 
 > Taylor became fascinated by the contrast between the scientific precision of the machine in the shop and the remarkably unscientific processes that connected the human to these beautiful contraptions.
@@ -50,13 +51,14 @@ There is no particular orders, but I took some notes along the way so that I cou
 > _The perfect step (pg 39)_
 
 ---
-> The structures of our organizations reflect this ideal. Whether imbued with a "lazy worker" Theory X or a "motivated worker" Theory Y disposition, the "org charts" of most multiperson endeavors look pretty similar: a combination of specialized vertical columns (departments or divisions) and horizonal tiers that denote levels of authority, with the most powerful literally on top -- the only tier that can access all columns.
+> The structures of our organizations reflect this ideal. Whether imbued with a "lazy worker" Theory X or a "motivated worker" Theory Y disposition, the "org charts" of most multiperson endeavors look pretty similar: a combination of specialized vertical columns (departments or divisions) and horizontal tiers that denote levels of authority, with the most powerful literally on top -- the only tier that can access all columns.
 >
 > Taylor's system of reductionist planning lent itself naturally to a new generation of neat and tidy hierarchies. Peter Ducker argued that Taylor, more than Karl Marx, deserves a place in the pantheon of modern intellectual thought alongside Darwin and Freud.
 >
 > _We have other men paid for thinking (pg 47)_
 
 ---
+
 #### 3. What went wrong actually?
 
 > Lorenz presented a paper, "Does the Flap of a Butterfly's Wings in Brazil Set Off a Tornado in Texas?" The phrase "the butterfly effect entered the world"
@@ -64,7 +66,7 @@ There is no particular orders, but I took some notes along the way so that I cou
 > Being ___complex___ is different from being ___complicated___. Things that are complicated may have many parts, but those parts are joined, in relatively simple ways. They ultimately can be broken down into a series of neat and tidy deterministic relations.
 >
 > Complexity, on the other hand, occurs when the number of interactions between components increases dramatically -- the interdependencies that allow viruses and bank runs to spread; this is where things quickly become unpredictable.
-> 
+>
 > _Comets and cold fronts (pg 56)_
 
 ---
@@ -88,6 +90,7 @@ There is no particular orders, but I took some notes along the way so that I cou
 > _The threat from behind (pg 79)_
 
 ---
+
 #### 5. Trust is the ingredient
 
 > This is about more than the feel-good effects of "bonding". It is done because teams whose members know one another deeply perform better. Any coach knows that these sorts of relationships are vital for success. A fighting force with good individual training, a solid handbook, and a sound strategy can execute a plan efficiently, and as long as the environment remains fairly static, odds of success are high. But a team fused by trust and purpose is much more potent. Such as group can improvise a coordinated response to dynamic, real-time developments.
@@ -96,13 +99,14 @@ There is no particular orders, but I took some notes along the way so that I cou
 
 ---
 > The difference between command and control on the one hand, and adapt and collaborate on the other, was the difference between success and failure. The proliferation of teams across a diversity of complex environments -- from special operations to trauma care -- evidences their ability to thrive in the midst of the sort of challenge that our Task Force faced.
-> 
+>
 > We have honed the traits of trust and purpose at the team level, but our organization at large was the complete opposite -- it was a classic command.
 >
 > _Charm school (pg 114)_
 
 ---
-#### 6. Something is still missing.
+
+#### 6. Something is still missing
 
 > Each team exhibited horizontal bonds of trust and a common sense of purpose, but the only external ties that mattered to each team ran vertically, connecting it to the command superstructure, just like workers on an assembly line. Meaningful relationships between teams were nonexistent.
 >
@@ -125,6 +129,7 @@ There is no particular orders, but I took some notes along the way so that I cou
 > _MECE (page 122)_
 
 ---
+
 #### 7. Building trust at a large scale
 
 > Small teams are effective in large part because they are small -- people know each other intimately and have clocked hundreds of hours with each other. In large organizations most people will inevitably be strangers to one another. In fact, the very traits that make teams great can often work to prevent their _coherence_ into a broader whole.
@@ -153,7 +158,7 @@ There is no particular orders, but I took some notes along the way so that I cou
 > On a single team, every individual needs to know every other individual in order to build trust, and they need to maintain comprehensive awareness at all times in order to maintain common purpose -- easy with a group of twenty-five, doable with a group of fifty, tricky above one hundred and definitely impossible across a task force of seven thousand.
 >
 > We don't need every member of the Task Force to know everyone else; we just needed everyone to know _someone_ on every team, so that when they thought about, or had to work with, the unit that bunked next door or their intelligence counterparts in D.C., they envisioned a friendly face rather than a competitive rival.
-> We needed to enable a team operating in an interdependent environment to understand the butterfly-effect ramifications of their work and make them aware of the other teams with whom they would have to coopertate in order to achieve strategic success.
+> We needed to enable a team operating in an interdependent environment to understand the butterfly-effect ramifications of their work and make them aware of the other teams with whom they would have to cooperate in order to achieve strategic success.
 >
 > _Team of teams (pg 129)_
 
@@ -163,29 +168,31 @@ There is no particular orders, but I took some notes along the way so that I cou
 > _The "need to know" fallacy (pg 141)_
 
 ---
-#### 8. Buidling a shared platform for everyone
+
+#### 8. Building a shared platform for everyone
 
 > NASA -- all data were on display in a central control room that had links with automated displays to Apollo field centers. These rooms buzzed with activity, constantly receiving updates from contractors and teams and in turn providing information to them. As the utility of this information became evident, more and more engineers who were initially opposed started to come around.
 >
-> The reason that it worked and that we got it ready on schedule was because we had everybody in that room that we needed to make a decision ... it got to apoint where we could identify a problem in the morning and by the close of business we could solve it, get the money allocated, get the decisions made, and get things working.
+> The reason that it worked and that we got it ready on schedule was because we had everybody in that room that we needed to make a decision ... it got to appoint where we could identify a problem in the morning and by the close of business we could solve it, get the money allocated, get the decisions made, and get things working.
 >
 > This approach, contrary to reductionism, believes that one cannot understand a part of system without having at least a rudimentary understanding of the whole. It was the organizational manifestation of this insight that imbued NASA with the adaptive, emergent intelligence it needed to put a man on the moon.
 >
 > _New metal alloys, some of which have not yet been invented (pg 149)_
 
 ---
-> Consider a doctor and her education. Doctors come in many varieties -- pediatricians, ENTs, radiologists, etc, yet while in medical school, all undergo the same rigorous overview of the way the human body works. Because the human body is not a set of independent elements, but a system of interdependent elements, you need to understand how the metabolism of sugar works in order to understand how diabetes can cuase the death of issue in fingers.
+> Consider a doctor and her education. Doctors come in many varieties -- pediatricians, ENTs, radiologists, etc, yet while in medical school, all undergo the same rigorous overview of the way the human body works. Because the human body is not a set of independent elements, but a system of interdependent elements, you need to understand how the metabolism of sugar works in order to understand how diabetes can cause the death of issue in fingers.
 >
 > _Sets and systems (pg 152)_
 
 ---
-> How we organize physical space says a lot about how we think people behave; but how people behave is often a by-product of how we set up physical space. At Balad we needed a space that faciliated not the orderly, machine like flow of paperwork, but the erratic, networked flow of ideas -- an architecture designed not for separation, but for the merging of worlds. We weren't the only ones to be trying this -- there was a growing movement in the private sector to organize offices for better cooperation, too.
+> How we organize physical space says a lot about how we think people behave; but how people behave is often a by-product of how we set up physical space. At Balad we needed a space that facilitated not the orderly, machine like flow of paperwork, but the erratic, networked flow of ideas -- an architecture designed not for separation, but for the merging of worlds. We weren't the only ones to be trying this -- there was a growing movement in the private sector to organize offices for better cooperation, too.
 >
 > In Silicon Valley, Google, Facebook, and other titans, as well as countless start-ups, use open plans that put different teams and different rungs of management in the same space.
 >
 > _Brains out of the footlocker (pg 159)_
 
 ---
+
 #### 9. Mistrust, Doubt and Leak
 
 > The O&I, as it was commonly called, is standard military practice: a regular meeting held by the leadership of a given command to integrate everything the command is doing with everything it knows.
@@ -199,54 +206,57 @@ There is no particular orders, but I took some notes along the way so that I cou
 > _The O&I, pushback, success (pg 168)_
 
 ---
-> Massive leaks are not an inevitable consequence of the current level of information sharing, but even if they were, the benefits vastly outweight the potential costs. The sharing of information within US intelligence community since 9/11 has saved many lives and done far more good than the damage from incidents like the Manning and Snowden leaks has done harm.
+> Massive leaks are not an inevitable consequence of the current level of information sharing, but even if they were, the benefits vastly outweigh the potential costs. The sharing of information within US intelligence community since 9/11 has saved many lives and done far more good than the damage from incidents like the Manning and Snowden leaks has done harm.
 >
 > _What about wikileaks? (pg 171)_
 
 ---
+
 #### 9. Forced Exchange
 
-> One of the most controversial moves was our embedding program, an exchange system we began in late 2003 in which we would take an individual from one team -- say, an Army Special Forces operator -- and assign him to a different part of our force for six months -- a team of SEALs, for example, or a group of analysts. Our hope was that, by allowing our operators to see how the war looked from inside other groups, and by building personal relationships, we could build between teams some of the fluency that tradionally exists within teams.
+> One of the most controversial moves was our embedding program, an exchange system we began in late 2003 in which we would take an individual from one team -- say, an Army Special Forces operator -- and assign him to a different part of our force for six months -- a team of SEALs, for example, or a group of analysts. Our hope was that, by allowing our operators to see how the war looked from inside other groups, and by building personal relationships, we could build between teams some of the fluency that traditionally exists within teams.
 >
 > Predictably, initial resistance was intense. "Our teams train in entirely different ways," I was informed.
 >
-> Although it was a "forced" initiative, once the mandate was in place, elite units were naturally incentivized to send their best operators and leaders. Over time, he would also begin to see some of the positives of the alternative approach. As an added bonus, they would see their newfound friend as representative of the entire unit. When these operators returned to their home unit, their positive comments on the rival unit would spread, deepening the ties between teams. Slowly, we grew the bonds of trust needed for us to overcome our Prisoner's Dilemma.
+> Although it was a "forced" initiative, once the mandate was in place, elite units were naturally incentivize to send their best operators and leaders. Over time, he would also begin to see some of the positives of the alternative approach. As an added bonus, they would see their newfound friend as representative of the entire unit. When these operators returned to their home unit, their positive comments on the rival unit would spread, deepening the ties between teams. Slowly, we grew the bonds of trust needed for us to overcome our Prisoner's Dilemma.
 >
 > _Walk a mile in an analyst's shoe (pg 177)_
 
 ---
-> When asking for LNO nominations to fill critical positions, we used two criteria: 
-> 
+> When asking for LNO nominations to fill critical positions, we used two criteria:
+>
 > (1) if it doesn't pain you to give the person up, pick someone else
-> 
-> (2) if it is not someone whose voice you'll recognise when they call you at home at 2am, pick someone else.
-> 
-> Previously, we might have made decisions based on rank, position, or where people wanted to go in their carrers. But to get this right, _Personal qualities trumped everything else_.
+>
+> (2) if it is not someone whose voice you'll recognize when they call you at home at 2am, pick someone else.
+>
+> Previously, we might have made decisions based on rank, position, or where people wanted to go in their careers. But to get this right, _Personal qualities trumped everything else_.
 >
 > _Walk a mile in an analyst's shoe (pg 178)_
 
 ---
+
 #### 10. Two essential ingredients
 
 > Fostering such engagement is more easily said than done. Almost every company has posters and slogans urging employees to "work together", but simply telling people to "communicate" is the equivalent of Taylor's telling his workers to "do things faster", and stopping there.
 >
-> It is necessary, we found, to forcibly dismantle the old system and replace it with an entirely new managerial architecture. Our new architecture was shared consciousness, and it consisted of two elements. 
-> 
+> It is necessary, we found, to forcibly dismantle the old system and replace it with an entirely new managerial architecture. Our new architecture was shared consciousness, and it consisted of two elements.
+>
 > The first was extreme, participatory transparency -- the "system management" of NASA that we mimicked with our O&I forums and our open physical space. This allowed all participants to have a holistic awareness equivalent to the contextual awareness of ___purpose___ we already knew at a team level.
 >
 > The second was the creation of strong internal connectivity across teams -- something we achieved with our embedding and liaison programs. This mirrored the ___trust___ that enabled our small teams to function.
-> 
+>
 > _Decentralized operations with coordinated control (pg 197)_
 
 ---
+
 #### 11. Mindset shift for the leader
 
-> In short, when they can see what's going on, leaders understandbly want to control what's going on. Empowerment tends to be a tool of last resort. We can call this tethering of visibility to control the "Perry Principle".
+> In short, when they can see what's going on, leaders understandably want to control what's going on. Empowerment tends to be a tool of last resort. We can call this tethering of visibility to control the "Perry Principle".
 >
-> Taylor's contemporary Henri Fayol enumerated the "five functions of management" as "planning, organizing, commanding, coordinating and controlling". The last threee become much easier to attend to when you have more information, creeating a cycle of seeking ways to gather and centralize more information in order to push more and more efficient directives to the organization. The function of workers is to feed this cycle and await the next commands.
+> Taylor's contemporary Henri Fayol enumerated the "five functions of management" as "planning, organizing, commanding, coordinating and controlling". The last three become much easier to attend to when you have more information, creating a cycle of seeking ways to gather and centralize more information in order to push more and more efficient directives to the organization. The function of workers is to feed this cycle and await the next commands.
 >
 > Today's managers have access to all kinds of information their employees that they lacked just a few years ago. Automated systems at restaurants monitor waiters' movements, tracking every ticket, dish, and drink, searching for patterns that suggest efficacy as well as those correlated to theft. All of this enables the habitual centralization of power.
-> 
+>
 > _All under the guns of his ships (pg 208)_
 
 ---
@@ -264,11 +274,12 @@ There is no particular orders, but I took some notes along the way so that I cou
 > _All under the guns of his ships (pg 215)_
 
 ---
+
 #### 12. Becoming a gardener
 
 > From a distance, the Task Force's fight in Iraq in 2004 looked like chess. But the chess metaphor quickly broke down. The enemy could move multiple pieces simultaneously or pummel us in quick succession, without waiting respectfully for our next move.
 >
-> Years later as Task Force commander, I began to view effective leadership in the new environment as more akin to gardening than chess. The move-by-move control that seemed natural to military operations proved less effective than nurturing the organization -- its structure, processes, and cutlure -- to function with "smart autonomy". It allowed those forces to be enabled with a constant flow of "shared consciousness" from across the force, and it freed them to execute actions in pursuit of the overall strategy as best they saw fit.
+> Years later as Task Force commander, I began to view effective leadership in the new environment as more akin to gardening than chess. The move-by-move control that seemed natural to military operations proved less effective than nurturing the organization -- its structure, processes, and culture -- to function with "smart autonomy". It allowed those forces to be enabled with a constant flow of "shared consciousness" from across the force, and it freed them to execute actions in pursuit of the overall strategy as best they saw fit.
 >
 > _Chess master to gardener: the leaders we now need (pg 225)_
 
@@ -278,33 +289,33 @@ There is no particular orders, but I took some notes along the way so that I cou
 > The gardener (pg 226)
 
 ---
-> For the same reasons, the O&I was never canceled and attandance was mandatory. I felt that if the O&I was seen as an occasional event not always attended by key leaders, it would unravel.
+> For the same reasons, the O&I was never canceled and attendance was mandatory. I felt that if the O&I was seen as an occasional event not always attended by key leaders, it would unravel.
 >
 > I wanted the O&I to be a balance of reporting key information and active interaction. That didn't come naturally, particularly across a digital medium. The participants came from different organizational cultures, were thousands of miles apart, and had never met in person. Getting candor under those conditions was not easy, but we made it work. When necessary, I would pre-plan questions or comments and plant them with trusted partners to help demonstrate to everyone what I wanted the O&I to be.
 >
 > The gardener (pg 227)
 
 ---
-> When their turns came and their faces suddenly filled the screen I made it a point to greet them by their first name, which often caused them to smile in evident surprise. They were eight levels down the chain of command and many miles away -- how did the commanding general know their names? Simple: I had my team prepare a "cheat sheet" of the day's planned briefers so I could make one small gesture to put them at ease.
+> When their turns came and their faces suddenly filled the screen I made it a point to greet them by their first name, which often caused them to smile in evident surprise. They were eight levels down the chain of command and many miles away -- how did the commanding general know their names? Simple: I had my team prepare a "cheat sheet" of the day's planned briefer so I could make one small gesture to put them at ease.
 >
 > At the conclusion, I'd ask a question. The answer might not be deeply important, and often I knew it beforehand, but I wanted to show that I had listened and that their work mattered.
 >
-> For a young member, even if the brief had been terrible, I would compliment the report. Others would later offer them advice on how to improve -- but it didn't need to come from me in front of thousands of people. When we did it right, the people left the O&I more confident about, commited to, and personally invested in our effort.
+> For a young member, even if the brief had been terrible, I would compliment the report. Others would later offer them advice on how to improve -- but it didn't need to come from me in front of thousands of people. When we did it right, the people left the O&I more confident about, committed to, and personally invested in our effort.
 >
 > The gardener (pg 228)
 
 ---
 > I adapted a practice I called "thinking out loud", in which I would summarize what I'd heard, describe how I processed the information and outline my first thoughts on what we should consider doing about it. After I did that, in a pointed effort to reinforce empowered execution, I would often ask the subordinate to consider what action might be appropriate and tell me what he or she planned to do.
 >
-> Thinking out loud can be a frightening prospect for a senior leader. Ignorance on a subject is quickly obvious, and efforts to fake expertise are embarassingly ineffective. I found, however, that asking seemingly stupid questions or admitting openly "I don't know" was accepted, even appreciated.
+> Thinking out loud can be a frightening prospect for a senior leader. Ignorance on a subject is quickly obvious, and efforts to fake expertise are embarrassingly ineffective. I found, however, that asking seemingly stupid questions or admitting openly "I don't know" was accepted, even appreciated.
 >
 > The gardener (pg 229)
 
 ### Conclusion
 
-Leading a team of teams is a formiddable task. The heroic "hands-on" leader who relies on personal competence and will power will be overwhelmed by accelarating speed, swelling complexity and interdependence. We must learn to lead differently.
+Leading a team of teams is a formidable task. The heroic "hands-on" leader who relies on personal competence and will power will be overwhelmed by accelerating speed, swelling complexity and interdependence. We must learn to lead differently.
 
-Creating and leading a truly adapative organization requires building, leading and maintaining a culture that is flexible but also durable.
+Creating and leading a truly adaptive organization requires building, leading and maintaining a culture that is flexible but also durable.
 
 The primary responsibility of the new leader is to maintain a holistic, big picture view, avoiding a reductionist approach, no matter how tempting micromanaging may be.
 
