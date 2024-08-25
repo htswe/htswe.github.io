@@ -5,7 +5,8 @@ header:
 categories:
   - Tech
 tags:
-  - Learning, Mobile, General
+  - Learning
+  - Mobile
 ---
 
 ### Introduction
