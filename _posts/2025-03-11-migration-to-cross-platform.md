@@ -10,56 +10,46 @@ tags:
 
 ### Introduction
 
-The company I worked for was using native android and ios apps for the past 8 years. The business was growing and there are many challenges arising from the native apps. For example, we need to hire at least one developer for each platform and we couldn't begin the development until all the new developers are hired.
+After eight years of relying on native Android and iOS apps, my company's business growth had presented several new challenges. Our platform was struggling to scale, with development velocity constrained by the need to hire at least one developer for each platform before a project could even begin.
 
-As the business was growing, the number of developers in the team was increasing and most of the times, the two platforms were developed in different ways. The team was also focusing on their own platform and they were not able to help each other.
+As the team expanded, a division emerged. The Android and iOS teams, each with their own leads and development practices, tended to work in silos. My key challenge was to address this by increasing efficiency and fostering a culture of reusability and knowledge-sharing across platforms.
 
-Each team has their own leads and they tend to work on their own platform. There is an increasing pressure on the team leaders to become more effective and efficient. The pressure of reusable and sharable among the platforms was increasing.
+### My Search for a Solution: The Kotlin Multiplatform Evaluation
 
-### Kotlin Multiplatform
+To address this challenge, I began to evaluate cross-platform solutions together with 2 other android and iOS leads. My initial thought was to explore Kotlin Multiplatform (KMP), which seemed promising for sharing business logic.
 
-As the pressure begun, we started to look for a solution to the problem. We started to look at Kotlin Multiplatform and we were very excited about the idea of using Kotlin for the shared code.
+After several discussions with the Android and iOS leads, I found that the iOS team was reluctant to share UI code due to their ongoing migration to SwiftUI. However, we discovered that KMP could be used to build a shared library for non-UI code, which was a significant breakthrough.
 
-After the few rounds of discussions among android and iOS lead, we found that sharing UI code is not desirable from the iOS team as they are in the process of migrating to SwiftUI and they are not ready to share the UI code.
+My team and I initiated a **proof-of-concept** by building a deep-link parser to be shared between the apps. This was a critical first step in proving the value of a shared codebase.
 
-We found out that Kotlin Multiplatform could be shared as a library and we could use it in both android and iOS apps. This was a great news and we started to explore the idea.
+### Strategic Insights from the Kotlin Multiplatform Proof-of-Concept
 
-Our first step was building a deep-link parser that can be shared between the apps. We built a shared library that can parse the deep-link and extract the parameters.
+Our six-month evaluation period provided valuable insights:
 
-### Lesson Learnt in Kotlin Multiplatform
+- **Organizational and Technical Hurdles**: We discovered that KMP's lack of a mature Swift export at the time was a major deterrent for the iOS team. This showed me that technical compatibility is not enough; organizational buy-in is a critical factor in a large-scale migration.
 
-At the time of writing this article, Kotlin Multiplatform does not have the capability in Swift export yet. This was one of the reasons why our iOS team was reluctant to accept the idea.
+- **Tooling and Development Efficiency**: The need to constantly switch between Xcode and Android Studio highlighted the high cost of a fragmented development environment. I learned that a seamless developer experience is essential for a project's success.
 
-The tooling (IDE) support is not there yet for Kotlin Multiplatform. We have switched between Xcode and Android Studio in order to build and test the code.
+- **Team Dynamics**: My team and I intentionally gave the iOS lead the space to explore and learn, to ensure we addressed their concerns and gave them a sense of ownership in the process. This taught me that building trust is key to successful collaboration.
 
-Exporting the library in Maven was easy, but requires some efforts to setup for the Swift Package Manager.
+### The Strategic Pivot to React Native
 
-Kotlin Multiplatform is the closest cross platform to Android developer, but not for the iOS developer. We took special consideration to let iOS member to take the lead role and give enough space to explore and learn.
+In a sudden turn of events, the React Native idea was introduced to my team. I quickly recognized its strategic advantages. With the New Architecture announced in 2024, React Native had made significant performance improvements.
 
-After sharing it with the other team leads, some teams are more willing while others are not.
+The business case was further strengthened by two key factors:
 
-It also took about 6 months for the discussion and the POC work.
+- **Over-the-Air (OTA) Updates**: React Native's unique ability to ship instant updates to our users was a huge selling point.
 
-### React Native
+- **Resourcing Efficiency**: With an internal team of web developers already proficient in React, I saw an opportunity to consolidate our talent pool and accelerate our resourcing strategy.
 
-In unexpected turn of event, React Native idea was introduced. With the new architecture announced in 2024, there was the news that it has been significantly improved the React Native bridge and better performance in React Native older architecture.
+The team quickly built a prototype that resembled an existing product. Using AI tools, we were able to quickly validate the idea and secure buy-in from senior leadership.
 
-The Over-the-air (OTA) update is one of the unique selling points for React Native.
+### Lessons Learned as a Leader
 
-We also have teams in web development who are proficient in React framework, hence it makes more sense from the resourcing point of view. Consolidating into the same/similar tech stack was the attractive option.
+This journey taught me valuable lessons that go beyond the technical. As a leader, I realized that the success of a technology initiative depends on:
 
-The team quickly build an prototype that looks like an existing product. With the good timing with Cursor editor and AI agents, the team managed to build the prototype really quickly.
+- **Bridging the Technical and Human Gaps**: The frontend project was driven by a backend team, which caused significant friction. This experience taught me the importance of empowering the right people with the right skills to drive a project forward.
 
-### Lesson Learnt in React Native
+- **Navigating Tooling Hurdles**: Even with advanced tools, we faced significant challenges. I learned to identify these hurdles early and create a support system for the team to overcome them.
 
-With the right time and right tool, React Native development is really fast. The AI tool helps a lot and with existing codebase to reference, things move really well.
-
-There are two types of React Native - greenfield and brownfield. The documentation for Android is much harder to find and solve than iOS platform. A number of them seems like hacky, for example, using `sed` command to overwrite the version numbers in `node_modules` which is auto-generated.
-
-When the frontend project was driven by backend team leads, there have been unhappiness and criticism from both engineering and non-engineering teams. Some frontend leads were pondering if they are now forced to choose between "do" or "leave".
-
-### Conclusion
-
-You could read many articles about migrating from one platform to another. Most of them are probably written from technical standpoint such as app performance, coding, maintainability, etc.
-
-In this article, it is taken from human aspect on what could have been done and what challenge we will face with the different approach. If you have any good story to share, I would like to hear about it too.
+While you could read many articles on migrating platforms from a technical standpoint, this experience has been a masterclass in collaboration, adaptation, and leadership. It has prepared me to lead future teams through their own transformation journeys.
