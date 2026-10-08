@@ -4,6 +4,8 @@ dist
 .env
 
 # Generated from the Jekyll source by scripts/migrate-content.mjs
-src/content/posts/
-src/content/posts.migration-map.json
+src/content/blog/
 public/assets/
+
+# Theme demo screenshots — not referenced by this blog
+public/images/

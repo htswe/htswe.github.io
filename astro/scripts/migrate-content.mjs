@@ -1,19 +1,22 @@
 /**
- * Migrate Jekyll markdown posts into the Astro content collection.
+ * Migrate Jekyll markdown posts into the Ink theme's `blog` content collection.
  *
- * Source:  <repo>/_posts/*.md           (published Jekyll posts)
- * Output:  <astro>/src/content/posts/*.md
+ * Source:  <repo>/_posts/*.md                  (published Jekyll posts)
+ * Output:  <astro>/src/content/blog/*.md       (astro-theme-ink schema)
  *
- * What it does:
- *  - Copies each post verbatim (same filename, so the date + slug survive).
- *  - Rewrites Jekyll/Liquid link tags to the URLs the new Astro routes emit:
+ * Per post it:
+ *  - maps Jekyll frontmatter to the theme schema:
+ *      title / categories / tags / header.image
+ *      -> title / description / publishDate / tags / heroImage / slug / category / permalink
+ *  - rewrites Liquid link tags to the URLs the new routes emit:
  *      {% post_url 2021-10-14-set-in-kotlin %}          -> /tech/set-in-kotlin/
  *      {{ site.baseurl }}{% link _posts/<file>.md %}    -> /<cat>/<slug>/
- *  - Converts the one `{% include video ... %}` tag to a plain <iframe>.
- *  - Strips kramdown inline attribute lists such as `{: .align-center}`.
+ *  - converts the one `{% include video ... %}` tag to an <iframe>
+ *  - strips kramdown inline attribute lists such as `{: .align-center}`
+ *  - copies assets/ -> public/assets/
  *
- * It also writes src/content/posts.migration-map.json listing every post's
- * Jekyll URL so the build output can be diffed against the old _site/ build.
+ * Also writes src/content/blog/.migration-map.json with every post's original
+ * Jekyll URL so the build can be diffed against the old _site/ output.
  */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -24,33 +27,68 @@ const ASTRO_ROOT = path.resolve(__dirname, '..');
 const SITE_ROOT = path.resolve(ASTRO_ROOT, '..');
 
 const SRC_POSTS = path.join(SITE_ROOT, '_posts');
-const OUT_POSTS = path.join(ASTRO_ROOT, 'src', 'content', 'posts');
+const OUT_BLOG = path.join(ASTRO_ROOT, 'src', 'content', 'blog');
+const MAP_FILE = path.join(OUT_BLOG, '.migration-map.json');
 
-/** Locate the frontmatter block, returning it and the body. */
+/** Split off the frontmatter block. */
 function splitFrontmatter(raw) {
   const m = raw.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?/);
   if (!m) return { fm: null, body: raw };
   return { fm: m[1], body: raw.slice(m[0].length) };
 }
 
-/** Pull the first entry of a YAML list key out of the frontmatter text. */
-function firstListItem(fm, key) {
-  const re = new RegExp(`^${key}:\\s*\\n\\s*-\\s*(.+)$`, 'm');
+/** Read a YAML list key (`tags:`) into a string[] as written. */
+function listItems(fm, key) {
+  const re = new RegExp(`^${key}:[ \\t]*\\n((?:[ \\t]*-[ \\t]*.+\\n?)+)`, 'm');
   const m = fm.match(re);
+  if (!m) return [];
+  return m[1]
+    .split('\n')
+    .map((l) => l.replace(/^[ \t]*-[ \t]*/, '').trim())
+    .filter(Boolean)
+    .map((s) => s.replace(/^["']|["']$/g, ''));
+}
+
+/** Read a scalar `key: value` from frontmatter. */
+function scalar(fm, key) {
+  const m = fm.match(new RegExp(`^${key}:[ \\t]*(.+)$`, 'm'));
   return m ? m[1].trim().replace(/^["']|["']$/g, '') : null;
 }
 
-/** filename (no .md) -> { date, slug, category, url } for every post. */
+/** Nested `header:\n  image: ...` -> value. */
+function headerImage(fm) {
+  const m = fm.match(/^header:[ \t]*\n(?:[ \t]+.+\n)*?[ \t]+image:[ \t]*(.+)$/m);
+  return m ? m[1].trim().replace(/^["']|["']$/g, '') : null;
+}
+
+/** Plain-text snippet from the first real paragraph of the markdown body. */
+function makeDescription(body, max = 200) {
+  const cleaned = body
+    .replace(/```[\s\S]*?```/g, ' ')
+    .replace(/!\[[^\]]*\]\([^)]*\)/g, ' ')
+    .replace(/\[([^\]]*)\]\([^)]*\)/g, '$1')
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/[#>*_`~]/g, '');
+  const para = cleaned
+    .split(/\n\s*\n/)
+    .map((p) => p.replace(/\s+/g, ' ').trim())
+    .find((p) => p.length > 40);
+  const text = para ?? cleaned.replace(/\s+/g, ' ').trim();
+  return text.length > max ? `${text.slice(0, max - 1).trimEnd()}…` : text;
+}
+
+/** filename (no .md) -> { date, slug, category, url } */
 function buildIndex() {
   const index = new Map();
   for (const file of fs.readdirSync(SRC_POSTS).filter((f) => f.endsWith('.md'))) {
-    const raw = fs.readFileSync(path.join(SRC_POSTS, file), 'utf8');
-    const { fm } = splitFrontmatter(raw);
+    const { fm } = splitFrontmatter(fs.readFileSync(path.join(SRC_POSTS, file), 'utf8'));
     const id = file.replace(/\.md$/, '');
+    const dateMatch = id.match(/^(\d{4}-\d{2}-\d{2})-/);
+    const date = dateMatch ? dateMatch[1] : null;
     const slug = id.replace(/^\d{4}-\d{2}-\d{2}-/, '');
-    const category = fm ? firstListItem(fm, 'categories') : null;
+    const category = fm ? listItems(fm, 'categories')[0] ?? null : null;
     const url = category ? `/${category.toLowerCase()}/${slug}/` : `/${slug}/`;
-    index.set(id, { id, slug, category, url });
+    index.set(id, { id, slug, date, category, url });
   }
   return index;
 }
@@ -71,25 +109,20 @@ function resolveLink(ref) {
 function migrateBody(body) {
   let out = body;
 
-  // {{ site.baseurl }}{% link _posts/<file>.md %} and bare {% link ... %}
   out = out.replace(
     /\{\{\s*site\.baseurl\s*\}\}\s*\{%\s*link\s+(_posts\/[^\s%]+)\s*%\}/g,
     (_m, ref) => resolveLink(ref),
   );
   out = out.replace(/\{%\s*link\s+(_posts\/[^\s%]+)\s*%\}/g, (_m, ref) => resolveLink(ref));
 
-  // [label]: {% post_url YYYY-MM-DD-slug %}  (reference-style link definitions)
   out = out.replace(/\{%\s*post_url\s+([0-9]{4}-[0-9]{2}-[0-9]{2}-[^\s%]+)\s*%\}/g, (_m, ref) =>
     resolveLink(ref),
   );
 
-  // {% include video id="X" provider="youtube" %}
   out = out.replace(
     /\{%\s*include\s+video\s+id=["']([^"']+)["'](?:\s+provider=["']([^"']+)["'])?\s*%\}/g,
     (_m, id, provider) => {
-      if (provider && provider !== 'youtube') {
-        return `[Video: ${id}]`;
-      }
+      if (provider && provider !== 'youtube') return `[Video: ${id}]`;
       return [
         `<div class="video-embed">`,
         `<iframe src="https://www.youtube.com/embed/${id}" title="YouTube video" `,
@@ -99,19 +132,16 @@ function migrateBody(body) {
     },
   );
 
-  // Leftover bare liquid (e.g. {{ site.baseurl }}) -> nothing
   out = out.replace(/\{\{\s*site\.baseurl\s*\}\}/g, '');
-
-  // kramdown inline attribute lists: `{: .align-center}` etc.
   out = out.replace(/\{:\s*\.[^}]*\}/g, '');
 
   return out;
 }
 
-if (fs.existsSync(OUT_POSTS)) {
-  fs.rmSync(OUT_POSTS, { recursive: true, force: true });
+if (fs.existsSync(OUT_BLOG)) {
+  fs.rmSync(OUT_BLOG, { recursive: true, force: true });
 }
-fs.mkdirSync(OUT_POSTS, { recursive: true });
+fs.mkdirSync(OUT_BLOG, { recursive: true });
 
 let count = 0;
 const map = [];
@@ -122,20 +152,39 @@ for (const file of fs.readdirSync(SRC_POSTS).filter((f) => f.endsWith('.md')).so
     console.warn(`! ${file}: no frontmatter, skipped`);
     continue;
   }
+
   const meta = index.get(file.replace(/\.md$/, ''));
-  // Persist the original filename slug (Astro's glob loader slugifies ids,
-  // which would lowercase e.g. `leSS-agile` -> `less-agile` and break URLs).
-  const fmOut = /^slug:/m.test(fm) ? fm : `${fm}\nslug: "${meta.slug}"`;
-  const migrated = `---\n${fmOut}\n---\n${migrateBody(body)}`;
-  fs.writeFileSync(path.join(OUT_POSTS, file), migrated);
+  const title = scalar(fm, 'title') ?? meta.slug;
+  const image = headerImage(fm);
+  const tags = listItems(fm, 'tags').flatMap((t) => t.split(',').map((x) => x.trim())).filter(Boolean);
+
+  const lines = [
+    '---',
+    `title: ${JSON.stringify(title)}`,
+    `description: ${JSON.stringify(makeDescription(body))}`,
+    `publishDate: ${JSON.stringify(meta.date ?? '1970-01-01')}`,
+  ];
+  if (tags.length) {
+    lines.push('tags:');
+    for (const t of tags) lines.push(`  - ${JSON.stringify(t)}`);
+  } else {
+    lines.push('tags: []');
+  }
+  if (image) {
+    lines.push('heroImage:');
+    lines.push(`  src: ${JSON.stringify(image)}`);
+  }
+  if (meta.slug) lines.push(`slug: ${JSON.stringify(meta.slug)}`);
+  if (meta.category) lines.push(`category: ${JSON.stringify(meta.category)}`);
+  lines.push(`permalink: ${JSON.stringify(meta.url)}`);
+  lines.push('---');
+
+  fs.writeFileSync(path.join(OUT_BLOG, file), `${lines.join('\n')}\n${migrateBody(body)}`);
   map.push({ file, slug: meta.slug, category: meta.category, url: meta.url });
   count++;
 }
 
-fs.writeFileSync(
-  path.join(ASTRO_ROOT, 'src', 'content', 'posts.migration-map.json'),
-  JSON.stringify(map, null, 2),
-);
+fs.writeFileSync(MAP_FILE, JSON.stringify(map, null, 2));
 
 // Copy static assets served from the site root (/assets/...).
 const srcAssets = path.join(SITE_ROOT, 'assets');
@@ -145,16 +194,13 @@ if (fs.existsSync(srcAssets)) {
   fs.cpSync(srcAssets, outAssets, { recursive: true });
 }
 
-console.log(`Migrated ${count} posts -> src/content/posts/`);
-console.log(`Wrote ${map.length} URL mappings -> src/content/posts.migration-map.json`);
-if (fs.existsSync(srcAssets)) {
-  console.log('Copied assets/ -> public/assets/');
-}
+console.log(`Migrated ${count} posts -> src/content/blog/`);
+console.log(`Wrote ${map.length} URL mappings -> src/content/blog/.migration-map.json`);
+if (fs.existsSync(srcAssets)) console.log('Copied assets/ -> public/assets/');
 if (missingLinks.length) {
   console.warn(`\n${missingLinks.length} unresolved link target(s):`);
   for (const l of [...new Set(missingLinks)]) console.warn(`  - ${l}`);
 } else {
   console.log('All liquid link tags resolved.');
 }
-const cats = [...new Set(map.map((m) => m.category))];
-console.log('Categories:', cats.join(', '));
+console.log('Categories:', [...new Set(map.map((m) => m.category))].join(', '));

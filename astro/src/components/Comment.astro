@@ -1,0 +1,14 @@
+---
+/**
+ * Comments are disabled for this site (no Waline server configured), so this
+ * component is a deliberate no-op. The original Ink theme's Waline
+ * implementation (client + stylesheet) is intentionally not bundled here —
+ * set `config.comment.server` and restore the previous version from
+ * astro-theme-ink if you ever want comments back.
+ */
+import { config } from '@/site-config'
+
+const enabled = config.comment.provider === 'waline' && config.comment.server !== ''
+---
+
+{enabled && <div id="waline" />}
