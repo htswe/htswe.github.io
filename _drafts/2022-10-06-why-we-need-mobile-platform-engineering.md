@@ -5,7 +5,8 @@ toc: true
 categories:
   - Tech
 tags:
-  - Learning, Mobile Engineering
+  - Learning
+  - Mobile Engineering
 ---
 
 ### Reinventing the wheel

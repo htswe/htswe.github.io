@@ -36,6 +36,22 @@ Paraphrase is simply taking time to repeat back what you've heard. It could have
 
 Priming is by paraphrasing with a little inference. Priming is where empathy and paraphrasing meet. To do well, you need to put yourself in the other's position, take what's been shared, and make an educated guess as to how they are thinking and feeling about the topic. For example, you ask: "It sounds like you've experienced things from me that make you think I have a grudge about how things went at the end. Is that right? What have I done that looked like that?"
 
+### Make it safe
+
+While you want to keep dialogue consists of the free flow of meaning, that would stop when one feels a lack of safety. If you noticed that you and the others have moved away from dialogue, do something to make it safer.
+
+> If you simply understand that your challenge is to make it safer, 9 out of 10 times, you'll intuitively do something that helps.
+
+The action could be as simple as by asking a question or showing interest in others' views. Apologies, smiles, even a request of a short "time-out" can help restore safety.
+
+The main idea is to make it safe for everyone, so the dialogue could be effective.
+
+### Use Contrasting to make it safe
+
+Use Contrasting. Explain that you don't want to hurt the person's feelings, but you do want to share something that could be helpful. Establish Mutual Purpose. Let the other person know your intentions are honorable.
+
+---
+
 ### Learn to look at level
 
 When it comes to the conversation, we could engage at two levels, `content` and `process`.
@@ -50,15 +66,7 @@ Before start a crucial conversation, pause and ask yourself what you really want
 
 You've got multiple topics competing for your attention. Therefore, it is important to pick the most important topic that you want to address and focus on the topic.
 
-### Make it safe
 
-While you want to keep dialogue consists of the free flow of meaning, that would stop when one feels a lack of safety. If you noticed that you and the others have moved away from dialogue, do something to make it safer.
-
-> If you simply understand that your challenge is to make it safer, 9 out of 10 times, you'll intuitively do something that helps.
-
-The action could be as simple as by asking a question or showing interest in others' views. Apologies, smiles, even a request of a short "time-out" can help restore safety.
-
-The main idea is to make it safe for everyone, so the dialogue could be effective.
 
 ### Learn to look at people reaction
 
@@ -70,9 +78,7 @@ Most people avoid sensitive issues like the plague. Unfortunately, when fear and
 
 When people do speak up, they often leap from silence to violence. Jokes, nicknames, and other veiled attempts to sneak in vague feedback are both indirect and disrespectful. Also, the longer you go without saying anything, the greater the pain when you finally deliver the message.
 
-### Use Contrasting to make it safe
 
-Use Contrasting. Explain that you don't want to hurt the person's feelings, but you do want to share something that could be helpful. Establish Mutual Purpose. Let the other person know your intentions are honorable.
 
 ### Talk your expectations out
 
