@@ -1,27 +1,56 @@
-# Minimal Mistakes remote theme starter
+# Byte-sized learner
 
-Click [**Use this template**](https://github.com/mmistakes/mm-github-pages-starter/generate) button above for the quickest method of getting started with the [Minimal Mistakes Jekyll theme](https://github.com/mmistakes/minimal-mistakes).
+Personal blog of **Henry TSwe**, built with [Astro](https://astro.build) and the
+[Ink theme](https://github.com/willimt/astro-theme-ink) (UnoCSS, warm "ink on
+paper" typography, dark/light, TOC, search, tags, archives, RSS).
 
-Contains basic configuration to get you a site with:
+Previously a Jekyll site (minimal-mistakes). The Jekyll build has been retired;
+the markdown content was kept in place so the Astro build migrates it.
 
-- Sample posts.
-- Sample top navigation.
-- Sample author sidebar with social links.
-- Sample footer links.
-- Paginated home page.
-- Archive pages for posts grouped by year, category, and tag.
-- Sample about page.
-- Sample 404 page.
-- Site wide search.
+## Repository layout
 
-Replace sample content with your own and [configure as necessary](https://mmistakes.github.io/minimal-mistakes/docs/configuration/).
+| Path | Purpose |
+| --- | --- |
+| `_posts/` | Post markdown, Jekyll-style `YYYY-MM-DD-slug.md` filenames. **Source of truth** for content. |
+| `assets/` | Images referenced as `/assets/...`. |
+| `astro/` | The Astro site (theme, config, pages, build tooling). |
+| `_drafts/`, `_old_posts/` | Legacy Jekyll collections. Not published by the Astro build. |
 
----
+## Develop
 
-## Troubleshooting
+```bash
+cd astro
+npm install
+npm run dev        # http://localhost:4321
+```
 
-If you have a question about using Jekyll, start a discussion on the [Jekyll Forum](https://talk.jekyllrb.com/) or [StackOverflow](https://stackoverflow.com/questions/tagged/jekyll). Other resources:
+`npm run dev` and `npm run build` run `predev`/`prebuild`, which execute
+`astro/scripts/migrate-content.mjs`. That script reads `_posts/`, rewrites the
+Jekyll/Liquid tags, and writes the Astro content collection to
+`astro/src/content/blog/` (plus copies `assets/` into `astro/public/assets/`).
+Both targets are git-ignored — they are always regenerated from `_posts/`.
 
-- [Ruby 101](https://jekyllrb.com/docs/ruby-101/)
-- [Setting up a Jekyll site with GitHub Pages](https://jekyllrb.com/docs/github-pages/)
-- [Configuring GitHub Metadata](https://github.com/jekyll/github-metadata/blob/master/docs/configuration.md#configuration) to work properly when developing locally and avoid `No GitHub API authentication could be found. Some fields may be missing or have incorrect data.` warnings.
+## Build
+
+```bash
+cd astro
+npm run build      # static site -> astro/dist
+```
+
+## Deploy
+
+`.github/workflows/deploy.yml` builds the Astro site and publishes
+`astro/dist` to GitHub Pages on every push to `master`.
+
+One-time setup in the repo: **Settings → Pages → Build and deployment →
+Source = GitHub Actions** (it used to build Jekyll from this branch).
+
+## URLs
+
+The theme serves posts at `/blog/<slug>/`. The original Jekyll permalinks are
+preserved for inbound links:
+
+- `/:category/:slug/` (e.g. `/tech/why-kotlin/`) — renders the post, canonical
+  points to the `/blog/` URL.
+- `/posts` → `/archives`, `/categories` → `/tags`, `/feed.xml` → `/rss.xml`,
+  `/pageN/` → `/blog/N/` (config redirects).

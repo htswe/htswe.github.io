@@ -1,4 +1,11 @@
+# Jekyll is retired; these stay ignored in case stray build artifacts reappear.
 _site
 .sass-cache
 .jekyll-metadata
 Gemfile.lock
+
+# Node / Astro (the Astro project has its own .gitignore too)
+node_modules
+
+# macOS
+.DS_Store
