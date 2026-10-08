@@ -1,0 +1,53 @@
+---
+import type { GetStaticPaths } from 'astro';
+import { render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getPosts, formatDate } from '../../lib/posts';
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const posts = await getPosts();
+  return posts.map((post) => ({
+    params: {
+      // Jekyll lowercases the category segment: /Tech/ -> /tech/
+      category: post.primaryCategory ? post.primaryCategory.toLowerCase() : 'uncategorised',
+      post: post.slug,
+    },
+    props: { post },
+  }));
+};
+
+const { post } = Astro.props;
+const { Content } = await render(post.entry);
+---
+
+<BaseLayout title={post.title} description={post.excerpt} image={post.image}>
+  <article>
+    <header class="post-header">
+      <h1>{post.title}</h1>
+      <p class="meta">
+        {formatDate(post.date)}
+        {post.categories.length > 0 && <> · {post.categories.join(', ')}</>}
+      </p>
+    </header>
+
+    {post.image && <img class="post-hero" src={post.image} alt={post.title} />}
+
+    <div class="prose">
+      <Content />
+    </div>
+
+    {
+      post.tags.length > 0 && (
+        <p class="meta">
+          Tags:{' '}
+          {post.tags.map((t, i) => (
+            <>
+              <a href={`/tags/#${t.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}>{t}</a>
+              {i < post.tags.length - 1 ? ', ' : ''}
+            </>
+          ))}
+        </p>
+      )
+    }
+  </article>
+</BaseLayout>

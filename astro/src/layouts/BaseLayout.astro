@@ -1,0 +1,56 @@
+---
+import { SITE, NAV, FOOTER_LINKS } from '../consts';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+}
+
+const { title, description = SITE.description, image } = Astro.props;
+const pageTitle = title && title !== SITE.title ? `${title} | ${SITE.title}` : SITE.title;
+const canonical = new URL(Astro.url.pathname, Astro.site ?? SITE.url).href;
+const ogImage = image ? new URL(image, Astro.site ?? SITE.url).href : undefined;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" type="application/rss+xml" title={SITE.title} href="/feed.xml" />
+    {ogImage && <meta property="og:image" content={ogImage} />}
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="/assets/images/bio-photo.jpg" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <a class="brand" href="/">{SITE.title}</a>
+        <p class="tagline">{SITE.description}</p>
+        <nav>
+          {NAV.map((item) => <a href={item.url}>{item.title}</a>)}
+        </nav>
+      </div>
+    </header>
+    <main class="container">
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <div class="container">
+        <div class="links">
+          {FOOTER_LINKS.map((l) => <a href={l.url}>{l.label}</a>)}
+        </div>
+        <div>
+          © {new Date().getFullYear()} {SITE.author}. Built with Astro.
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

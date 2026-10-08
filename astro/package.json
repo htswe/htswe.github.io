@@ -1,0 +1,20 @@
+{
+  "name": "htswe-blog",
+  "version": "0.1.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "migrate": "node scripts/migrate-content.mjs",
+    "predev": "npm run migrate",
+    "dev": "astro dev",
+    "prebuild": "npm run migrate",
+    "build": "astro build",
+    "preview": "astro preview",
+    "test": "node scripts/migrate-check.mjs"
+  },
+  "dependencies": {
+    "astro": "^7.3.7",
+    "@astrojs/sitemap": "^3.7.4"
+  },
+  "devDependencies": {}
+}

@@ -1,0 +1,9 @@
+node_modules
+dist
+/.astro
+.env
+
+# Generated from the Jekyll source by scripts/migrate-content.mjs
+src/content/posts/
+src/content/posts.migration-map.json
+public/assets/

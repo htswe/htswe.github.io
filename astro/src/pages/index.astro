@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PostList from '../components/PostList.astro';
+import { getPosts, paginate, pageUrl } from '../lib/posts';
+
+const posts = await getPosts();
+const page = paginate(posts, 1);
+---
+
+<BaseLayout title="Home">
+  <h1>Latest posts</h1>
+  <PostList posts={page.posts} />
+
+  <nav class="pagination">
+    <span class="spacer"></span>
+    <span>Page {page.currentPage} of {page.totalPages}</span>
+    {
+      page.nextUrl ? (
+        <a href={page.nextUrl}>Next ›</a>
+      ) : (
+        <span class="spacer"></span>
+      )
+    }
+  </nav>
+  <p class="meta">
+    <a href="/posts/">Browse the full archive →</a>
+  </p>
+</BaseLayout>

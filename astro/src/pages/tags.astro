@@ -1,0 +1,52 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getPosts, formatDate } from '../lib/posts';
+
+const posts = await getPosts();
+
+// Jekyll tags may contain comma-joined values (e.g. "Scrum, LeSS"); split them so
+// each discrete tag gets its own group, matching the tag archive behaviour.
+const byTag = new Map<string, typeof posts>();
+for (const post of posts) {
+  for (const raw of post.tags) {
+    for (const tag of raw.split(',').map((t) => t.trim()).filter(Boolean)) {
+      if (!byTag.has(tag)) byTag.set(tag, []);
+      byTag.get(tag)!.push(post);
+    }
+  }
+}
+const tags = [...byTag.keys()].sort((a, b) => a.localeCompare(b));
+const slug = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+---
+
+<BaseLayout title="Tags">
+  <h1>Posts by tag</h1>
+
+  <ul class="tag-cloud">
+    {
+      tags.map((tag) => (
+        <li>
+          <a href={`#${slug(tag)}`}>
+            {tag} <span class="meta">({byTag.get(tag)!.length})</span>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+
+  {
+    tags.map((tag) => (
+      <section class="archive-group">
+        <h2 id={slug(tag)}>{tag}</h2>
+        <ul>
+          {byTag.get(tag)!.map((post) => (
+            <li>
+              <a href={post.url}>{post.title}</a>{' '}
+              <span class="meta">— {formatDate(post.date)}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))
+  }
+</BaseLayout>
